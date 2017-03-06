@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-package com.support.android.designlibdemo;
+package com.android.korama;
+
 
 import java.util.Random;
 
