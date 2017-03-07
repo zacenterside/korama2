@@ -21,7 +21,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.TextViewCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
@@ -31,7 +30,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+import com.android.korama.model.Post;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,8 +50,7 @@ public class CheeseListFragment extends Fragment {
 
     private void setupRecyclerView(RecyclerView recyclerView) {
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
-        recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(),
-                getRandomSublist(Cheeses.sCheeseStrings, 30)));
+        recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(), Util.posts));
     }
 
     private List<String> getRandomSublist(String[] array, int amount) {
@@ -68,7 +67,7 @@ public class CheeseListFragment extends Fragment {
 
         private final TypedValue mTypedValue = new TypedValue();
         private int mBackground;
-        private List<String> mValues;
+        private List<Post> mValues;
 
         public static class ViewHolder extends RecyclerView.ViewHolder {
             public String mBoundString;
@@ -90,11 +89,11 @@ public class CheeseListFragment extends Fragment {
             }
         }
 
-        public String getValueAt(int position) {
+        public Post getValueAt(int position) {
             return mValues.get(position);
         }
 
-        public SimpleStringRecyclerViewAdapter(Context context, List<String> items) {
+        public SimpleStringRecyclerViewAdapter(Context context, List<Post> items) {
             context.getTheme().resolveAttribute(R.attr.selectableItemBackground, mTypedValue, true);
             mBackground = mTypedValue.resourceId;
             mValues = items;
@@ -110,8 +109,8 @@ public class CheeseListFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
-            holder.mBoundString = mValues.get(position);
-            holder.mTextView.setText(mValues.get(position));
+            holder.mBoundString = mValues.get(position).getTitle();
+            holder.mTextView.setText(mValues.get(position).getTitle());
 
             holder.mView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -124,9 +123,10 @@ public class CheeseListFragment extends Fragment {
                 }
             });
 
-            Glide.with(holder.mImageView.getContext())
-                    .load(Cheeses.getRandomCheeseDrawable())
-                    .fitCenter()
+            Picasso.with(holder.mImageView.getContext())
+                    .load(Util.posts.get(position).getImage_url())
+                    .placeholder(R.drawable.ic_menu)
+                    .error(R.drawable.ic_menu)
                     .into(holder.mImageView);
         }
 

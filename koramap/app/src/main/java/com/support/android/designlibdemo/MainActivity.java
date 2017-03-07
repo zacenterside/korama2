@@ -16,7 +16,6 @@
 
 package com.support.android.designlibdemo;
 
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -83,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
-        startActivity(new Intent(this,PrintHttpResultTest.class));
     }
 
     @Override
