@@ -20,6 +20,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/a"
         android:textColor="#000"
-        android:text="fuck"/>
+        android:text="Loading screen (change me later)"/>
     </ScrollView>
 </RelativeLayout>
