@@ -18,11 +18,6 @@ import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-<<<<<<< HEAD:koramap/app/src/main/java/com/support/android/designlibdemo/MainActivity.java
-=======
-
->>>>>>> feature/Image_list:koramap/app/src/main/java/com/android/korama/MainActivity.java
 
 import java.util.ArrayList;
 import java.util.List;

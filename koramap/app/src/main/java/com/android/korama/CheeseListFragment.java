@@ -52,12 +52,7 @@ public class CheeseListFragment extends Fragment {
 
     private void setupRecyclerView(RecyclerView recyclerView) {
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
-<<<<<<< HEAD:koramap/app/src/main/java/com/support/android/designlibdemo/CheeseListFragment.java
         recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(), Util.posts));
-=======
-        recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(),
-                getRandomSublist(Cheeses.sCheeseStrings, 30)));  //to fill with list of posts
->>>>>>> feature/Image_list:koramap/app/src/main/java/com/android/korama/CheeseListFragment.java
     }
 
     private List<String> getRandomSublist(String[] array, int amount) {
