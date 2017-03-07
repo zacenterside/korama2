@@ -93,7 +93,7 @@ public class PrintHttpResultTest extends AppCompatActivity {
                 result = r.body().string();
                 JSONObject jsonObject = new JSONObject(result);
                 JSONArray articles = jsonObject.getJSONArray("posts");
-                LinkedList<Post> posts = new LinkedList<>();
+                Util.posts = new LinkedList<>();
                 for(int i=0 ; i<articles.length();i++){
                     JSONObject article = new JSONObject(articles.get(i).toString());
                     Post p =new Post();
