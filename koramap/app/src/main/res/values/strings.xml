@@ -30,5 +30,11 @@
   <string name="menu_night_mode_day">Day (always)</string>
   <string name="menu_night_mode_night">Night (always)</string>
   <string name="menu_night_mode_auto">Auto</string>
+  <string name="category_1">category 1</string>
+  <string name="category_2">category 2</string>
+  <string name="category_3">category 3</string>
+  <string name="category_4">category 4</string>
+  <string name="category_5">category 5</string>
+  <string name="category_6">category 6</string>
 
 </resources>

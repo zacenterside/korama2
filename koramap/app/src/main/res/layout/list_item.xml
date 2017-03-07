@@ -16,24 +16,45 @@
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="8dp"
-    android:paddingBottom="8dp"
-    android:gravity="center_vertical">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/avatar"
-        android:layout_width="@dimen/list_item_avatar_size"
-        android:layout_height="@dimen/list_item_avatar_size"
-        android:layout_marginRight="16dp"/>
+    android:paddingLeft="@dimen/activity_horizontal_margin_med"
+    android:paddingRight="@dimen/activity_horizontal_margin_med"
+    android:paddingTop="@dimen/activity_vertical_margin_med"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@android:id/text1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?attr/textAppearanceListItem"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-</LinearLayout>
+           <ImageView
+               android:id="@+id/avatar"
+               android:layout_width="match_parent"
+               android:scaleType="centerCrop"
+               android:fitsSystemWindows="true"
+               app:layout_collapseMode="parallax"
+               android:layout_height="@dimen/height_img"/>
+
+           <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_img"
+                android:background="@drawable/black_transparent">
+
+               <TextView
+                    android:id="@android:id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:gravity="right"
+                    android:text="Medium Text"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_marginLeft="@dimen/activity_vertical_margin_med"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin_med"
+                    android:textColor="@color/text_color"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
