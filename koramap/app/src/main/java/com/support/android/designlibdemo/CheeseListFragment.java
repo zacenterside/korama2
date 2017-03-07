@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.korama;
+package com.support.android.designlibdemo;
 
 import android.content.Context;
 import android.content.Intent;
@@ -33,8 +33,6 @@ import android.widget.TextView;
 import com.android.korama.model.Post;
 import com.squareup.picasso.Picasso;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -52,12 +50,7 @@ public class CheeseListFragment extends Fragment {
 
     private void setupRecyclerView(RecyclerView recyclerView) {
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
-<<<<<<< HEAD:koramap/app/src/main/java/com/support/android/designlibdemo/CheeseListFragment.java
         recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(), Util.posts));
-=======
-        recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(),
-                getRandomSublist(Cheeses.sCheeseStrings, 30)));  //to fill with list of posts
->>>>>>> feature/Image_list:koramap/app/src/main/java/com/android/korama/CheeseListFragment.java
     }
 
     private List<String> getRandomSublist(String[] array, int amount) {
