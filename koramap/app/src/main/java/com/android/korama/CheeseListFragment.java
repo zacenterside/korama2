@@ -52,7 +52,7 @@ public class CheeseListFragment extends Fragment {
     private void setupRecyclerView(RecyclerView recyclerView) {
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
         recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(),
-                getRandomSublist(Cheeses.sCheeseStrings, 30)));
+                getRandomSublist(Cheeses.sCheeseStrings, 30)));  //to fill with list of posts
     }
 
     private List<String> getRandomSublist(String[] array, int amount) {
